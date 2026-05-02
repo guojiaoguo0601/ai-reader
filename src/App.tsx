@@ -105,6 +105,7 @@ function App() {
         <ProfileModal
           user={user}
           onClose={() => setShowProfile(false)}
+          onSignOut={signOut}
         />
       )}
     </div>

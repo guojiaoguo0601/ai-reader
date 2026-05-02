@@ -568,6 +568,103 @@ body::before {
   color: var(--moss);
 }
 
+/* ========== Tabs ========== */
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--sand);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: calc(var(--radius-sm) - 4px);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.tab.active {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.section-title.danger {
+  color: var(--danger);
+}
+
+.oauth-hint {
+  padding: 16px;
+  background: var(--accent-light);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.oauth-hint p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+}
+
+.danger-zone {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 24px;
+  background: var(--danger);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-danger:hover {
+  background: #9a3535;
+  transform: translateY(-1px);
+}
+
 /* ========== Profile Modal ========== */
 .profile-body {
   display: flex;
