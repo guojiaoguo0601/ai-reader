@@ -17,9 +17,10 @@ function saveLocal(books: Book[]) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(books))
 }
 
-function toDb(book: Book) {
+function toDb(book: Book, userId: string) {
   return {
     id: book.id,
+    user_id: userId,
     title: book.title,
     author: book.author,
     chapters: book.chapters,
@@ -73,7 +74,8 @@ export function useBooks(userId: string | undefined) {
   const syncOne = useCallback(
     async (book: Book) => {
       if (!userId) return
-      await supabase.from('books').upsert(toDb(book), { onConflict: 'id' })
+      const { error } = await supabase.from('books').upsert(toDb(book, userId), { onConflict: 'id' })
+      if (error) console.error('同步书籍失败:', error)
     },
     [userId]
   )
