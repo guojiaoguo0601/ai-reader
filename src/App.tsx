@@ -12,7 +12,7 @@ import { useAuth } from './hooks/useAuth'
 import type { Book } from './types'
 
 function App() {
-  const { user, loading: authLoading, signIn, signUp, signOut, signInWithOAuth } = useAuth()
+  const { user, loading: authLoading, error: authError, signIn, signUp, signOut, signInWithOAuth } = useAuth()
   const { books, addBook, updateBook, removeBook } = useBooks(user?.id)
   const { config, updateConfig, response, send } = useAI()
   const [view, setView] = useState<'shelf' | 'reader'>('shelf')
@@ -50,6 +50,7 @@ function App() {
           books={books}
           user={user}
           authLoading={authLoading}
+          authError={authError}
           onSelect={handleSelectBook}
           onRemove={removeBook}
           onAdd={() => setShowUploader(true)}

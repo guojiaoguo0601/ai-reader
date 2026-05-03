@@ -106,7 +106,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .bookshelf-actions {
@@ -115,21 +115,92 @@ body::before {
   gap: 12px;
 }
 
-.user-chip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px 6px 8px;
+/* ========== Auth Card ========== */
+.auth-card {
   background: var(--surface);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   border: 1px solid var(--border);
-  cursor: pointer;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-soft);
 }
 
-.user-chip:hover {
-  border-color: var(--terracotta);
-  box-shadow: 0 0 0 3px var(--accent-light);
+.auth-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.auth-status.loading {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.auth-status.error {
+  color: var(--danger);
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.auth-status.error svg {
+  flex-shrink: 0;
+}
+
+.auth-status.not-logged-in {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.auth-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.auth-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.auth-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 4px;
+  font-family: var(--font-body);
+}
+
+.auth-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.auth-status.logged-in {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.user-info:hover {
+  opacity: 0.8;
 }
 
 .user-avatar {
@@ -145,19 +216,66 @@ body::before {
   flex-shrink: 0;
 }
 
+.user-avatar.large {
+  width: 48px;
+  height: 48px;
+}
+
 .user-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.user-email {
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+.user-email-small {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--sand);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ink-soft);
-  max-width: 160px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--terracotta);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 12px;
 }
 
 .btn-ghost {
