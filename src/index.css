@@ -686,6 +686,31 @@ body::before {
   color: var(--moss);
 }
 
+.auth-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(184, 64, 64, 0.08);
+  border: 1px solid rgba(184, 64, 64, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--danger);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.auth-error svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.auth-error.success {
+  background: rgba(96, 108, 56, 0.08);
+  border-color: rgba(96, 108, 56, 0.2);
+  color: var(--moss);
+}
+
 /* ========== Tabs ========== */
 .tabs {
   display: flex;
